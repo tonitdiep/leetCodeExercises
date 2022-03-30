@@ -9,12 +9,27 @@ var mostCommonWord = function(paragraph, banned) {
 
     let map = {};
     let wordArray = paragraph.toLowerCase().match(/[a-z]+/g)
-        console.log(wordArray)
+        // console.log(wordArray)
+    for(let i = 0; i < wordArray.length; i++){
+        if(!bannedSet.has(wordArray[i])){
+            map[wordArray[i]] = (map[wordArray[i]] | 0) + 1;
+        }
+    }
 
+    let maxCount = 0;
+    let maxWord = " ";
+    
+    for(let key in map){
+        if (map[key] > maxCount){
+            maxWord = key;
+            maxCount = map[key];
+        }
+      
+    }
 
     return maxWord;
 }
-
+console.log(mostCommonWord(paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.", banned = ["hit"]))
 
 /*
 Input: paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.", banned = ["hit"]
