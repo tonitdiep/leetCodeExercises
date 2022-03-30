@@ -1,6 +1,19 @@
 
 
-var mostCommonWord = function(paragraph, banned) {}
+var mostCommonWord = function(paragraph, banned) {
+
+//hash set of the bannned words
+    let bannedSet = new Set(banned);
+    // console.log(bannedSet)
+//hashmap counting side word and count of the word (words that are not banned)
+
+    let map = {};
+    let wordArray = paragraph.toLowerCase().match(/[a-z]+/g)
+        console.log(wordArray)
+
+
+    return maxWord;
+}
 
 
 /*
